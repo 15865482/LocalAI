@@ -26,9 +26,24 @@
                 "LOCALAI_P2P": "true",
                 "LOCALAI_FEDERATED": "true"
             },
-            "buildFlags": ["-tags", "", "-v"],
+            "buildFlags": [
+                "-tags",
+                "",
+                "-v"
+            ],
             "envFile": "${workspaceFolder}/.env",
             "cwd": "${workspaceRoot}"
+        },
+        {
+            "name": "Containers: Node.js Launch",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "platform": "node",
+            "node": {
+                "package": "${workspaceFolder}/docs/package.json",
+                "localRoot": "${workspaceFolder}/docs"
+            }
         }
     ]
 }
